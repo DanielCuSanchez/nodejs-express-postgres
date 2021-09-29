@@ -1,20 +1,20 @@
-import Sequelize from "sequelize";
-import { sequelize } from "../database/database";
+const Sequelize = require("sequelize");
+const { sequelize } = require("../database/database");
 
 const Task = sequelize.define(
-  "tasks",
+  "htask",
   {
     id: {
       type: Sequelize.INTEGER,
       primaryKey: true,
     },
     name: {
-      type: Sequelize.TEXT,
+      type: Sequelize.STRING,
     },
     done: {
       type: Sequelize.BOOLEAN,
     },
-    projectId: {
+    projectid: {
       type: Sequelize.INTEGER,
     },
   },
@@ -23,4 +23,4 @@ const Task = sequelize.define(
   }
 );
 
-export default Task;
+module.exports = Task;

@@ -18,7 +18,7 @@ const Project = sequelize.define(
     description: {
       type: Sequelize.TEXT,
     },
-    delivarydate: {
+    deliverydate: {
       type: Sequelize.DATE,
     },
   },
@@ -27,7 +27,7 @@ const Project = sequelize.define(
   }
 );
 
-Project.hasMany(Task, { foreingKey: "projectId", sourceKey: "id" });
-Task.belongsTo(Project, { foreingKey: "projectId", sourceKey: "id" });
+Project.hasMany(Task, { foreingKey: "projectid", sourceKey: "id" });
+Task.belongsTo(Project, { foreingKey: "projectid", sourceKey: "id" });
 
 export default Project;

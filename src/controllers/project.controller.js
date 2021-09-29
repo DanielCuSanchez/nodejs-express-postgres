@@ -18,7 +18,7 @@ export async function getOneProject(req, res) {
 }
 
 export async function createProject(req, res) {
-  const { name, priority, description, delivarydate } = req.body;
+  const { name, priority, description, deliverydate } = req.body;
   console.log(req.body);
 
   try {
@@ -27,10 +27,10 @@ export async function createProject(req, res) {
         name,
         priority,
         description,
-        delivarydate,
+        deliverydate,
       },
       {
-        fields: ["name", "priority", "description", "delivarydate"],
+        fields: ["name", "priority", "description", "deliverydate"],
       }
     );
 
@@ -62,9 +62,9 @@ export async function deleteOneProject(req, res) {
 
 export async function updateOneProject(req, res) {
   const { id } = req.params;
-  const { name, priority, description, delivarydate } = req.body;
+  const { name, priority, description, deliverydate } = req.body;
   const projectsToUpdate = await Project.findAll({
-    attributes: ["id", "name", "priority", "description", "delivarydate"],
+    attributes: ["id", "name", "priority", "description", "deliverydate"],
     where: {
       id,
     },
@@ -76,7 +76,7 @@ export async function updateOneProject(req, res) {
         name,
         priority,
         description,
-        delivarydate,
+        deliverydate,
       });
     });
   }
